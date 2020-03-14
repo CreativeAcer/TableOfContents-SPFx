@@ -11,11 +11,11 @@ export default class Treenode extends React.Component<ItreenodeProps, {}> {
     public render(): React.ReactElement<ItreenodeProps> {
         return (
           <div>
-              Treenode length: {this.props.nodeArray.length}
-            {this.props.nodeArray.map((item, i) => {             
+              Treenode length: {this.props.nodeArray ? this.props.nodeArray.length : "empty"}
+            {this.props.nodeArray ? this.props.nodeArray.map((item, i) => {             
                 // Return the element. Also pass key     
                 return (<NodeItem key={i} nodeItem={item}  hrefLink={item}/>) 
-            })}
+            }) : null }
           </div>
         );
       }

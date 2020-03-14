@@ -12,15 +12,26 @@ import SpoTableofcontentsSpfx from './components/SpoTableofcontentsSpfx';
 import { ISpoTableofcontentsSpfxProps } from './components/ISpoTableofcontentsSpfxProps';
 
 export interface ISpoTableofcontentsSpfxWebPartProps {
+  nodes: string[];
   description: string;
 }
 
 export default class SpoTableofcontentsSpfxWebPart extends BaseClientSideWebPart <ISpoTableofcontentsSpfxWebPartProps> {
 
+  protected onInit(): Promise<void> {
+    // create a new promise
+    return new Promise<void>((resolve, _reject) => {
+        this.properties.nodes = Array.prototype.slice.call(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+        // resolve the promise
+        resolve(undefined);
+    });
+  }
+
   public render(): void {
     const element: React.ReactElement<ISpoTableofcontentsSpfxProps> = React.createElement(
       SpoTableofcontentsSpfx,
       {
+        nodes: this.properties.nodes,
         description: this.properties.description
       }
     );

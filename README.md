@@ -4,6 +4,9 @@ This project uses [React](https://reactjs.org).
 
 > This is where you include your project's documentation.
 
+gulp serve
+available on localhost workbench or /_layouts/workbench.aspx
+
 ## Global dependencies
 
 Requires Gulp globally installed:

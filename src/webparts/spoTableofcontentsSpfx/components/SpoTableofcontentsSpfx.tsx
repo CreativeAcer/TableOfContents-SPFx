@@ -19,7 +19,13 @@ export default class SpoTableofcontentsSpfx extends React.Component<ISpoTableofc
             </div>
           </div>
         </div>
+        <button onClick={this.getAnchors}>clickedy click</button>
       </div>
     );
+  }
+
+  private getAnchors(){
+    let anchors = document.anchors;
+    console.debug(anchors);
   }
 }

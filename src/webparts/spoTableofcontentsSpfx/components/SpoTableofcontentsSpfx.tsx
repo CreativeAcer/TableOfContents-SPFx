@@ -41,8 +41,7 @@ export default class SpoTableofcontentsSpfx extends React.Component<ISpoTableofc
     let anchorsList = Array.prototype.slice.call(document.querySelectorAll("h1, h2, h3, h4, h5, h6"));
     this.setState({
       showNodes: !this.state.showNodes,
-      anchors: this.state.showNodes ? [...this.state.anchors, anchorsList] : []
+      anchors: anchorsList
     });
-    console.log(this.state.anchors);
   }
 }

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { escape } from '@microsoft/sp-lodash-subset';
+import { Link } from 'office-ui-fabric-react/lib/Link';
 
 export interface InodeProps {
-    nodeItem: string;
-    hrefLink: string;
+    nodeItem: Element;
 }
 
 export default class NodeItem extends React.Component<InodeProps, {}> {
@@ -13,9 +13,7 @@ export default class NodeItem extends React.Component<InodeProps, {}> {
       
     public render(): React.ReactElement<InodeProps> {
         return (
-          <div>
-            test
-          </div>
+          <Link href={`#` + this.props.nodeItem.textContent.replace(/\s+/g, '-').toLowerCase()}>{this.props.nodeItem.textContent}</Link>
         );
       }
 }

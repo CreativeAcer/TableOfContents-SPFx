@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "spo-tableofcontents-spfx-client-side-solution",
+    "name": "Table of Contents",
     "id": "88eb1348-909f-43ee-8543-977e52e6e1a9",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,

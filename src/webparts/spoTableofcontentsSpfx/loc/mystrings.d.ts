@@ -1,7 +1,7 @@
 declare interface ISpoTableofcontentsSpfxWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
+  LevelsFieldLabel: string;
 }
 
 declare module 'SpoTableofcontentsSpfxWebPartStrings' {

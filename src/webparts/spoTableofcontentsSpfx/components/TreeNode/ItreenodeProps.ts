@@ -1,3 +1,3 @@
 export interface ItreenodeProps {
-    nodeArray: string[];
+    nodeArray: Element[];
 }

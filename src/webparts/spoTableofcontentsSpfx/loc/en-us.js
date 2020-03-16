@@ -1,7 +1,7 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Description",
-    "BasicGroupName": "Group Name",
-    "DescriptionFieldLabel": "Description Field"
+    "PropertyPaneDescription": "Select how many levels should be shown in de index",
+    "BasicGroupName": "Index settings",
+    "LevelsFieldLabel": "Amount of levels to display"
   }
 });

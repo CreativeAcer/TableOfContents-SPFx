@@ -7,6 +7,12 @@ This project uses [React](https://reactjs.org).
 gulp serve
 available on localhost workbench or /_layouts/workbench.aspx
 
+## Example of first results
+
+Index based on content from page ( SharePoint header Header 1 - Header 2 - Header 3)
+
+![image](./assets/indexexample.PNG?raw=true "Example")
+
 ## Global dependencies
 
 Requires Gulp globally installed:

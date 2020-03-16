@@ -1,0 +1,35 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+
+.link {
+    a {
+        background-color: $ms-color-themePrimary;
+        box-shadow: 0 5px 0 $ms-color-themeDark;
+        color: white;
+        padding: 0.5em 0.5em;
+        margin: 0.3em;
+        // position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+      
+        &:hover {
+          background-color: lighten($ms-color-themePrimary, 30);
+          color: white;
+          cursor: pointer;
+        }
+      
+        &:active {
+          box-shadow: none;
+          top: 5px;
+          color: lighten($ms-color-themePrimary, 80);
+        }
+
+        &:visited {
+            color: white;
+        }
+      
+      }
+
+      display: flex;
+      flex-wrap: wrap;
+      
+}

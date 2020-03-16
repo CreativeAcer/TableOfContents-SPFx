@@ -5,14 +5,14 @@ import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
-import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import { BaseClientSideWebPart, PropertyPaneDropdown } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'SpoTableofcontentsSpfxWebPartStrings';
 import SpoTableofcontentsSpfx from './components/SpoTableofcontentsSpfx';
 import { ISpoTableofcontentsSpfxProps } from './components/ISpoTableofcontentsSpfxProps';
 
 export interface ISpoTableofcontentsSpfxWebPartProps {
-  description: string;
+  levels: number;
 }
 
 export default class SpoTableofcontentsSpfxWebPart extends BaseClientSideWebPart <ISpoTableofcontentsSpfxWebPartProps> {
@@ -21,7 +21,9 @@ export default class SpoTableofcontentsSpfxWebPart extends BaseClientSideWebPart
     const element: React.ReactElement<ISpoTableofcontentsSpfxProps> = React.createElement(
       SpoTableofcontentsSpfx,
       {
-        description: this.properties.description
+        levels: this.properties.levels,
+        configureWebpart: this._configureWebPart,
+        context: this.context
       }
     );
 
@@ -36,6 +38,10 @@ export default class SpoTableofcontentsSpfxWebPart extends BaseClientSideWebPart
     return Version.parse('1.0');
   }
 
+  private _configureWebPart = () => {
+    this.context.propertyPane.open();
+  }
+
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
@@ -47,8 +53,13 @@ export default class SpoTableofcontentsSpfxWebPart extends BaseClientSideWebPart
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneDropdown('levels', {
+                  label: 'Amount to display',
+                  options: [
+                    { key: '1', text: 'One Level', index: 0},
+                    { key: '2', text: 'Two Levels', index: 1},
+                    { key: '3', text: 'Three Levels', index: 2},
+                  ]
                 })
               ]
             }
